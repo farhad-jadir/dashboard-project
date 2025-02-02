@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "title": "Whitechapel Rd.",
+      "location": "Tulare County, Los Angeles, CA 23415",
+      "price": "$1,456,654.00",
+      "image": "/fire1.png"
+    },
+    {
+      "id": 2,
+      "title": "Whitechapel Rd.",
+      "location": "Tulare County, Los Angeles, CA 23415",
+      "price": "$1,456,654.00",
+      "image": "/fire2.png"
+    },
+    {
+      "id": 3,
+      "title": "Tulare County",
+      "location": "Tulare County, Los Angeles, CA 23415",
+      "price": "$1,456,654.00",
+      "image": "/fire3.png"
+    },
+    {
+      "id": 4,
+      "title": "Tulare County",
+      "location": "Tulare County, Los Angeles, CA 23415",
+      "price": "$1,456,654.00",
+      "image": "/fire4.png"
+    },
+    {
+        "id": 5,
+        "title": "Tulare County",
+        "location": "Tulare County, Los Angeles, CA 23415",
+        "price": "$1,456,654.00",
+        "image": "/fire5.png"
+      },
+      {
+        "id": 6,
+        "title": "Tulare County",
+        "location": "Tulare County, Los Angeles, CA 23415",
+        "price": "$1,456,654.00",
+        "image": "/fire6.png"
+      }
+  ]

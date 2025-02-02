@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "image": "/Frame1.png",
+      "title": "What type of incident?",
+      "description": "Choose the category that best describes the incident."
+    },
+    {
+      "id": 2,
+      "image": "/Frame2.png",
+      "title": "Tell us about the incident?",
+      "description": "Let's connect the dots and see where to start."
+    },
+    {
+      "id": 3,
+      "image": "/Frame3.png",
+      "title": "Where did the incident occur?",
+      "description": "Lorem ipsum dolar sit general sac mascho werho"
+    }
+  ]
+  
