@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import useNavigate 
 import CardData from "../SubPages/CardData.json";
 import Button from "../ReusableComponents/Button";
 
-const NewIncidents = ({ onBack }) => {
+const NewIncidents = () => {
   const [cards, setCards] = useState([]);
+  const navigate = useNavigate(); // ✅ using useNavigate 
 
   useEffect(() => {
     setCards(CardData);
@@ -48,7 +50,12 @@ const NewIncidents = ({ onBack }) => {
       </div>
 
       {/* Get Started Button */}
-      <Button className="mt-8 sm:mt-16 md:mt-24 rounded-md text-white hover:bg-orange-800">Get started</Button>
+      <Button 
+        className="mt-8 sm:mt-16 md:mt-24 rounded-md text-white hover:bg-orange-800"
+        onClick={() => navigate("/GetStarted")} // ✅ "Get started" এ ক্লিক করলে `GetStarted.jsx`-এ যাবে
+      >
+        Get started
+      </Button>
     </div>
   );
 };

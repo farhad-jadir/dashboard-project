@@ -6,6 +6,8 @@ import Locations from "./pages/Locations";
 import Activities from "./pages/Activities";
 import Documents from "./pages/Documents";
 import CypherAI from "./pages/CypherAI";
+import NewIncidents from "./SubPages/NewIncidents"; 
+import GetStarted from "./SubPages/GetStarted"; // 
 import "./index.css";
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Documents" element={<Documents />} />
           <Route path="/CypherAI" element={<CypherAI />} />
+          <Route path="/NewIncidents" element={<NewIncidents />} /> 
+          <Route path="/GetStarted" element={<GetStarted />} /> 
         </Routes>
       </div>
     </Router>
