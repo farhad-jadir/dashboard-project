@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Bell, Search } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Bell } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <nav className="bg-[#f1f1f3] shadow-md  p-4 px-2 md:px-20">
+    <nav className="bg-[#f1f1f3] shadow-md p-4 px-2 md:px-20 border-b-2 border-[#E4E4E7] relative">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Side - Logo */}
         <div className="flex items-center space-x-8">
@@ -16,18 +17,30 @@ const Navbar = () => {
         </div>
 
         {/* Middle Side - Navigation Links */}
-        <div className="hidden md:flex space-x-6">
-          <Link to="/" className="text-gray-700 font-medium hover:text-black">Dashboard</Link>
-          <Link to="/incidents" className="text-gray-700 font-medium hover:text-black">Incidents</Link>
-          <Link to="/locations" className="text-gray-700 font-medium hover:text-black">Locations</Link>
-          <Link to="/activities" className="text-gray-700 font-medium hover:text-black">Activities</Link>
-          <Link to="/documents" className="text-gray-700 font-medium hover:text-black">Documents</Link>
-          <Link to="/cypher-ai" className="text-gray-700 font-medium hover:text-black">Cypher AI</Link>
+        <div className="hidden md:flex space-x-6 relative">
+          {[ 
+            { to: "/", label: "Dashboard" },
+            { to: "/incidents", label: "Incidents" },
+            { to: "/locations", label: "Locations" },
+            { to: "/activities", label: "Activities" },
+            { to: "/documents", label: "Documents" },
+            { to: "/cypher-ai", label: "Cypher AI" }
+          ].map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`relative font-medium hover:text-black ${location.pathname === link.to ? 'text-black after:absolute after:bottom-[-24px] after:left-0 after:w-full after:h-[3px] after:bg-black' : 'text-gray-700'}`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         {/* Right Side - Notification & Profile */}
         <div className="flex items-center space-x-4">
-          <Bell className="text-gray-600 hidden md:block" size={24} />
+          <div className="h-10 w-10 bg-[#fafafa] rounded-full flex items-center justify-center">
+              <Bell className="text-gray-600" size={24} />
+          </div>
           <div className="flex items-center space-x-2">
             <img src="/user-avatar.png" alt="User" className="h-8 w-8 rounded-full border" />
             <div className="hidden md:block">
@@ -46,12 +59,23 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden flex flex-col bg-white p-4 shadow-md">
-          <Link to="/" className="py-2 text-gray-700" onClick={() => setIsOpen(false)}>Dashboard</Link>
-          <Link to="/incidents" className="py-2 text-gray-700" onClick={() => setIsOpen(false)}>Incidents</Link>
-          <Link to="/locations" className="py-2 text-gray-700" onClick={() => setIsOpen(false)}>Locations</Link>
-          <Link to="/activities" className="py-2 text-gray-700" onClick={() => setIsOpen(false)}>Activities</Link>
-          <Link to="/documents" className="py-2 text-gray-700" onClick={() => setIsOpen(false)}>Documents</Link>
-          <Link to="/cypher-ai" className="py-2 text-gray-700" onClick={() => setIsOpen(false)}>Cypher AI</Link>
+          {[ 
+            { to: "/", label: "Dashboard" },
+            { to: "/incidents", label: "Incidents" },
+            { to: "/locations", label: "Locations" },
+            { to: "/activities", label: "Activities" },
+            { to: "/documents", label: "Documents" },
+            { to: "/cypher-ai", label: "Cypher AI" }
+          ].map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`py-2 ${location.pathname === link.to ? 'text-black border-b-2 border-black' : 'text-gray-700'}`}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>
