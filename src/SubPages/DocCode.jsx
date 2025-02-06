@@ -26,45 +26,71 @@ const DocCode = () => {
     },
   ];
 
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
   return (
-    <div className="min-h-screen bg-gray-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gray-100">
       {/* Header Section */}
+      
+      {/* Activities Section */}
+      <div className="mt-6">
+        {/* Section Header */}
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold">Activities</h2>
+          <button className="text-gray-400 underline cursor-pointer">See all</button>
+        </div>
 
-      {/* Activities and Documents Section */}
-      <div className="mt-6 space-y-8">
-        {["Activities", "Documents"].map((section, index) => (
-          <div key={index}>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold">{section}</h2>
-              <button className="text-blue-500 hover:underline">See all</button>
+        {/* Location Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          {locations.map((loc, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src={loc.image}
+                alt={loc.name}
+                className="w-16 h-16 object-cover rounded-lg"
+              />
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold">Activity name</h3>
+                <p className="text-gray-600">{loc.address} • {loc.lat}, {loc.lon}</p>
+                <p className="text-green-600 font-bold">{loc.price}</p>
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-              {locations.map((loc, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-lg shadow-md"
-                >
-                  <img
-                    src={loc.image}
-                    alt={loc.name}
-                    className="w-16 h-16 object-cover rounded-lg"
-                  />
-                  <div className="text-center sm:text-left">
-                    <h3 className="text-lg font-semibold">{section.slice(0, -1)} name</h3>
-                    <p className="text-gray-600">
-                      {loc.address} • {loc.lat}, {loc.lon}
-                    </p>
-                    <p className="text-green-600 font-bold">{loc.price}</p>
-                  </div>
-                </div>
-              ))}
+          ))}
+        </div>
+      </div>
+
+      {/* Line Bar Between Activities and Documents */}
+      <div className="w-full h-1 bg-gray-300 rounded-full my-16"></div>
+
+      {/* Documents Section */}
+      <div>
+        {/* Section Header */}
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold">Documents</h2>
+          <button className="text-gray-400 underline cursor-pointer">See all</button>
+        </div>
+
+        {/* Location Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          {locations.map((loc, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded-lg shadow-md"
+            >
+              <img
+                src={loc.image}
+                alt={loc.name}
+                className="w-16 h-16 object-cover rounded-lg"
+              />
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold">Document name</h3>
+                <p className="text-gray-600">{loc.address} • {loc.lat}, {loc.lon}</p>
+                <p className="text-green-600 font-bold">{loc.price}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

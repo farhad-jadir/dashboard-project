@@ -7,7 +7,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-[#f1f1f3] shadow-md p-4 px-2 md:px-20 border-b-2 border-[#E4E4E7] relative">
+    <nav className="bg-[#f1f1f3] shadow-md p-6 px-2 md:px-20 border-b-2 border-[#E4E4E7] relative">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Side - Logo */}
         <div className="flex items-center space-x-8">
@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`relative font-medium hover:text-black ${location.pathname === link.to ? 'text-black after:absolute after:bottom-[-24px] after:left-0 after:w-full after:h-[3px] after:bg-black' : 'text-gray-700'}`}
+              className={`relative font-medium hover:text-black ${location.pathname === link.to ? 'text-black after:absolute after:bottom-[-32px] after:left-0 after:w-full after:h-[3px] after:bg-black' : 'text-gray-700'}`}
             >
               {link.label}
             </Link>
