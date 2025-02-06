@@ -61,7 +61,7 @@ const DocCode = () => {
       </div>
 
       {/* Line Bar Between Activities and Documents */}
-      <div className="w-full h-1 bg-gray-300 rounded-full my-16"></div>
+      <div className="w-full h-1 bg-gray-300 rounded-full my-8 md:my-16"></div>
 
       {/* Documents Section */}
       <div>

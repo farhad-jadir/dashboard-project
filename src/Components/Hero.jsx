@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="p-6 relative">
+    <div className="p-2 md:p-12 relative">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map((card) => (
           <Card key={card.id} {...card} />

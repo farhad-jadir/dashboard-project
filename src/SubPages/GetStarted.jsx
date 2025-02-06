@@ -28,7 +28,7 @@ const GetStarted = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-white ">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row items-center justify-between bg-[#f1f1f3] p-4 md:p-8 rounded-lg shadow-md w-full ">
         {/* Left: New Incident */}
@@ -67,14 +67,14 @@ const GetStarted = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col items-center justify-center flex-1 bg-white p-4 md:p-6 rounded-lg shadow-md mt-4 w-full">
+      <div className="flex flex-col items-center justify-center flex-1 bg-white p-4  md:p-8 rounded-lg shadow-md mt-4 w-full">
         {/* Question */}
         <h2 className="text-lg sm:text-xl md:text-3xl font-bold text-gray-800 text-center">
           Which of these best describes the incident?
         </h2>
 
         {/* Incident Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-6 w-full max-w-6xl px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-6 w-full max-w-6xl px-4 p-2 md:p-4 ">
           {incidentTypes.map((incident) => (
             <button
               key={incident.name}

@@ -51,10 +51,10 @@ const NewIncidents = () => {
 
       {/* Get Started Button */}
       <Button 
-        className="mt-8 sm:mt-16 md:mt-24 rounded-md text-white hover:bg-orange-800"
+        className="mt-8 sm:mt-16 md:mt-24 rounded-md w-full sm:w-auto hover:bg-orange-800 text-[#FAFAFA]"
         onClick={() => navigate("/GetStarted")} // ✅ "Get started" এ ক্লিক করলে `GetStarted.jsx`-এ যাবে
       >
-        Get started
+        Get Started
       </Button>
     </div>
   );
